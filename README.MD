@@ -10,7 +10,7 @@ You can install LSSDsc from GitHub directly using devtools.
 - devtools::install_github("DuanX8/LSSD")
 
 ## Example
-  ```
+  ```    library(SingleCellExperiment)
 	 x<-readRDS("data/pollen.rds")
 	 data<-logcounts(x)
 	 A<-affs(t(data))
@@ -21,10 +21,10 @@ You can install LSSDsc from GitHub directly using devtools.
 ## Visualization
 We used the diffused graph incorporating UMAP dimensionality reduction method to visualize the clusters.
 
-  ```
+  ```     library(ggplot) 
 	  library(umap)
 	  um1<-umap(Sda)
-	  lab<-z$cell_type1
+	  lab<-x$cell_type1
 	  ft<-data.frame(um1$layout[,1],um1$layout[,2],lab)
 	  colnames(ft)<-c("u1","u2","lab")
 	  ggplot(ft, aes(ft$u1,ft$u2))+geom_point(aes(colour = factor(ft$lab)))+scale_color_manual(values=c("#1F77B4FF","#FF7F0EFF","#2CA02CFF","#D62728FF","#9467BDFF","#8C564BFF","#E377C2FF","#7F7F7FFF"))+labs(x="UMAP1",y="UMAP2")+theme(legend.position = "none")
