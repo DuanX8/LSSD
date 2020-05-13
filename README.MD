@@ -5,7 +5,7 @@
 Single-cell RNA sequencing(scRNA-seq) has enabled gene transcriptomic profiling to be studied at individual cell level, advancing our knowledge of the cellular heterogeneity and underlying mechanisms. A key step of this methodology is to perform unsupervised clustering, which, however, often suffers challenges of zero count observations, high level of noise, as well as high dimensionality. To overcome the challenges, we proposed self-diffusion on local scaling affinity (LSSD) to enhance cells similarities metric learning for dissecting cellular heterogeneity. Local scaling infers the self-tuning of cell-to-cell distances that are used to construct cells affinity. Our approach implements self-diffusion process by propagating the affinity matrices to further improve the cell similarities for the downstream clustering analysis.
 ## Installation
 
-You can install LSSDsc from GitHub directly using devtools.
+You can install LSSD from GitHub directly using devtools.
 - install.packages("devtools")
 - devtools::install_github("DuanX8/LSSD")
 
