@@ -5,12 +5,12 @@
 Single-cell RNA sequencing(scRNA-seq) has enabled gene transcriptomic profiling to be studied at individual cell level, advancing our knowledge of the cellular heterogeneity and underlying mechanisms. A key step of this methodology is to perform unsupervised clustering, which, however, often suffers challenges of zero count observations, high level of noise, as well as high dimensionality. To overcome the challenges, we proposed self-diffusion on local scaling affinity (LSSD) to enhance cells similarities metric learning for dissecting cellular heterogeneity. Local scaling infers the self-tuning of cell-to-cell distances that are used to construct cells affinity. Our approach implements self-diffusion process by propagating the affinity matrices to further improve the cell similarities for the downstream clustering analysis.
 ## Installation
 
-You can install LSSD from GitHub directly using devtools.
+You can install LSSDsc from GitHub directly using devtools.
 - install.packages("devtools")
-- devtools::install_github("DuanX8/LSSD")
+- devtools::install_github("DuanX8/LSSD/LSSD")
 
 ## Example
-  ```    library(SingleCellExperiment)
+  ```
 	 x<-readRDS("data/pollen.rds")
 	 data<-logcounts(x)
 	 A<-affs(t(data))
@@ -21,12 +21,13 @@ You can install LSSD from GitHub directly using devtools.
 ## Visualization
 We used the diffused graph incorporating UMAP dimensionality reduction method to visualize the clusters.
 
-  ```     library(ggplot) 
+  ```
 	  library(umap)
 	  um1<-umap(Sda)
-	  lab<-x$cell_type1
-	  ft<-data.frame(um1$layout[,1],um1$layout[,2],lab)
+	  ft<-data.frame(um1$layout[,1],um1$layout[,2],lab_zg)
 	  colnames(ft)<-c("u1","u2","lab")
-	  ggplot(ft, aes(ft$u1,ft$u2))+geom_point(aes(colour = factor(ft$lab)))+scale_color_manual(values=c("#1F77B4FF","#FF7F0EFF","#2CA02CFF","#D62728FF","#9467BDFF","#8C564BFF","#E377C2FF","#7F7F7FFF","#3B4992FF","#EE0000FF","#008B45FF","#631879FF"))+labs(x="UMAP1",y="UMAP2")+theme(legend.position = "none")
+	  ggplot(ft, aes(ft$u1,ft$u2))+geom_point(aes(colour = factor(ft$lab)))+scale_color_manual(values=c("#1F77B4FF","#FF7F0EFF","#2CA02CFF","#D62728FF","#9467BDFF","#8C564BFF","#E377C2FF","#7F7F7FFF"))+labs(x="UMAP1",y="UMAP2")+theme(legend.position = "none")
 
  ```
+ 
+ ![visualization](image/LSSD_umap.png)
