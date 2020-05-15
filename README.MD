@@ -7,7 +7,7 @@ Single-cell RNA sequencing(scRNA-seq) has enabled gene transcriptomic profiling 
 
 You can install LSSDsc from GitHub directly using devtools.
 - install.packages("devtools")
-- devtools::install_github("DuanX8/LSSD/LSSD")
+- devtools::install_github("DuanX8/LSSD")
 
 ## Example
   ```
