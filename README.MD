@@ -27,7 +27,7 @@ We used the diffused graph incorporating UMAP dimensionality reduction method to
 	  lab_true<-data$cell_type1
 	  ft<-data.frame(um1$layout[,1],um1$layout[,2],lab_true)
 	  colnames(ft)<-c("u1","u2","lab")
-	  ggplot(ft, aes(ft$u1,ft$u2))+geom_point(aes(colour = factor(ft$lab)))+scale_color_manual(values=c("#1F77B4FF","#FF7F0EFF","#2CA02CFF","#D62728FF","#9467BDFF","#8C564BFF","#E377C2FF","#7F7F7FFF"))+labs(x="UMAP1",y="UMAP2")+theme(legend.position = "none")
+	  ggplot(ft, aes(ft$u1,ft$u2))+geom_point(aes(colour = factor(ft$lab)))+scale_color_manual(values=c("#1F77B4FF","#FF7F0EFF","#2CA02CFF","#D62728FF","#9467BDFF","#8C564BFF","#E377C2FF","#7F7F7FFF"))+labs(x="LSSD_UMAP1",y="LSSD_UMAP2")+theme(legend.position = "none")
 
  ```
  
