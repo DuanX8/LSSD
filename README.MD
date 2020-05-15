@@ -30,4 +30,4 @@ We used the diffused graph incorporating UMAP dimensionality reduction method to
 
  ```
  
- ![visualization](image/LSSD_umap.png)
+ ![visualization](img/LSSD_umap.png)
